@@ -9,4 +9,4 @@ result=prescriber.join(cost)
 result.columns=['num_prescriber','total_cost']
 print(result)
 
-result.to_csv('https://github.com/edemirhan/Insight_Code_Challenge/blob/master/output/output.txt', sep=',')
+result.to_csv('https://github.com/edemirhan/Insight_Code_Challenge/blob/master/output/top_cost_drug.txt', sep=',')
