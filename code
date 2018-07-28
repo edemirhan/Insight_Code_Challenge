@@ -1,1 +1,12 @@
+import pandas as pd
 
+data = pd.read_csv('https://raw.githubusercontent.com/edemirhan/Insight_Code_Challenge/master/input/input.txt', sep=",", header=0)
+print(data)
+prescriber=data.groupby('drug_name')[['id']].count()
+cost=data.groupby('drug_name')[['drug_cost']].sum()
+
+result=prescriber.join(cost)
+result.columns=['num_prescriber','total_cost']
+print(result)
+
+result.to_csv('https://github.com/edemirhan/Insight_Code_Challenge/blob/master/output/output.txt', sep=',')
